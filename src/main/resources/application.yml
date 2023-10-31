@@ -2,12 +2,21 @@ spring:
   application:
     name: "configserver"
   profiles:
-    active: native
+    active: git
+  # active: native
   cloud:
     config:
       server:
-        native:
-          search-locations: "classpath:/config"
+        git:
+          uri: "https://github.com/DevSkillsLearning/easybank-config.git"
+          timeout: 5
+          clone-on-start: true
+          force-pull: true
+          username: "chauhan.devam@gmail.com"
+          password: "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"
+          default-label: main
+#        native:
+#          search-locations: "classpath:/config"
 
 
 server:
