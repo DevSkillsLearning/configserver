@@ -15,6 +15,10 @@ spring:
           username: "chauhan.devam@gmail.com"
           password: "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"
           default-label: main
+
+encrypt:
+  key: "2x9OJV4KDke26T+5KM4kdwnpNtnMY8RjP5mG7UNLANgxH+kwtQ/htsOFPyQmS0up"
+
 #        native:
 #          search-locations: "classpath:/config"
 
