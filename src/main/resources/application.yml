@@ -2,11 +2,14 @@ spring:
   application:
     name: "configserver"
   profiles:
+    # active: native
     active: git
-  # active: native
   cloud:
     config:
       server:
+        # native:
+        # search-locations: "classpath:/config"
+        # search-locations: "file:///Users//eazybytes//Documents//config"
         git:
           uri: "https://github.com/DevSkillsLearning/easybank-config.git"
           timeout: 5
@@ -15,21 +18,6 @@ spring:
           username: "chauhan.devam@gmail.com"
           password: "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"
           default-label: main
-  rabbitmq:
-    host: "localhost"
-    port: 5672
-    username: "guest"
-    password: "guest"
-
-encrypt:
-  key: "2x9OJV4KDke26T+5KM4kdwnpNtnMY8RjP5mG7UNLANgxH+kwtQ/htsOFPyQmS0up"
-
-#        native:
-#          search-locations: "classpath:/config"
-
-
-server:
-  port: 8071
 
 management:
   endpoints:
@@ -37,13 +25,17 @@ management:
       exposure:
         include: "*"
   health:
-    readinessstate:
+    readiness-state:
       enabled: true
-    livenessstate:
+    liveness-state:
       enabled: true
   endpoint:
     health:
       probes:
         enabled: true
 
+encrypt:
+  key: "45D81EC1EF61DF9AD8D3E5BB397F9"
 
+server:
+  port: 8071
