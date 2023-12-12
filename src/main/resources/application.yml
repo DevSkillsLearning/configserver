@@ -12,12 +12,12 @@ spring:
         # search-locations: "file:///Users//eazybytes//Documents//config"
         git:
           uri: "https://github.com/DevSkillsLearning/easybank-config.git"
+          default-label: main
           timeout: 5
           clone-on-start: true
           force-pull: true
           username: "chauhan.devam@gmail.com"
           password: "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"
-          default-label: main
 
 management:
   endpoints:
@@ -44,10 +44,5 @@ server:
   port: 8071
 
 logging:
-  level:
-    com:
-      easybank:
-        loans: DEBUG
   pattern:
     level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
-
